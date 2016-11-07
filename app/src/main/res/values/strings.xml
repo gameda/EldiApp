@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EldyApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_programa">programa</string>
+    <string name="title_activity_archivos">Archivos</string>
+    <string name="title_activity_estandar">Estandar</string>
+    <string name="title_activity_program">Program</string>
+    <string name="title_activity_read_value">ReadValue</string>
+    <string name="title_activity_result">Result</string>
+</resources>

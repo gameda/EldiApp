@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="itesm.eldyapp" >
+
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
+>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Archivos"
+            android:label="@string/title_activity_archivos" >
+        </activity>
+        <activity
+            android:name=".Estandar"
+            android:label="@string/title_activity_estandar" >
+        </activity>
+        <activity
+            android:name=".Program"
+            android:label="@string/title_activity_program" >
+        </activity>
+        <activity
+            android:name=".ReadValue"
+            android:label="@string/title_activity_read_value" >
+        </activity>
+        <activity
+            android:name=".Result"
+            android:label="@string/title_activity_result" >
+        </activity>
+    </application>
+
+</manifest>

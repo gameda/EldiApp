@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/renglonTV"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="left|center"
+    android:text="Hola"
+    android:textSize="20dp"
+    android:textColor="#363532"
+    >
+
+</TextView>
