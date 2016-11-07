@@ -61,22 +61,27 @@ public class Program extends AppCompatActivity {
                         int iI, iFin;
                         String sSub;
                         String sAux = sCode;
-                        sAux = sAux.trim();
-                        String sVaribales[] = new String[20];
-
+                        sAux = sAux.replaceAll(" ", "");
+                        String sVaribales[] = new String[10];
+                        int n = 0;
 
                         while (!sAux.isEmpty()){
                             iFin = sAux.indexOf("\n");
-                            sSub = sAux.substring(0, iFin);
-                            int n = 0;
+                            sSub = sAux.substring(0, iFin+1);
+
                             if(sSub.contains("read();")){
                                 iI = sSub.indexOf("=");
                                 sVaribales[n] = sSub.substring(0, iI);
                                 n++;
-                                sAux = sAux.replace(sSub, "");
+
 
 
                             }
+                            if(sSub.equals("\n")){
+                                sAux = sAux.replaceFirst("\n", "");
+                            }
+                            else
+                                sAux = sAux.replace(sSub, "");
 
 
                         }
@@ -84,7 +89,7 @@ public class Program extends AppCompatActivity {
                         intentRun = new Intent(Program.this, ReadValue.class);
 
                         intentRun.putExtra("code", sCode);
-                        intentRun.putExtra("varibales", sVaribales);
+                        intentRun.putExtra("variables", sVaribales);
                         startActivity(intentRun);
                     }
                     else {

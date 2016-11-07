@@ -24,11 +24,14 @@ public class ReadValue extends AppCompatActivity {
     }
 
     public void variables() {
-            Intent intent = this.getIntent();
-            Bundle datos = intent.getExtras();
-            String [] sVar= datos.getStringArray("variables");
-            for (int i = 0; i < 20; i++){
-            varTV.append(sVar[i] + " ");
+        Intent intent = this.getIntent();
+        Bundle datos = intent.getExtras();
+        String [] sVar= datos.getStringArray("variables");
+        for (int i = 0; i < sVar.length; i++){
+            if(sVar[i]==null)
+                break;
+            else
+                varTV.append(sVar[i] + " ");
         }
 
 
