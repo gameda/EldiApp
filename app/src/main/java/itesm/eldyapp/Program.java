@@ -60,7 +60,7 @@ public class Program extends AppCompatActivity {
                     if(sCode.contains("read();")) {
                         int iI, iFin;
                         String sSub;
-                        String sAux = sCode;
+                        String sAux = sCode + "\n";
                         sAux = sAux.replaceAll(" ", "");
                         String sVaribales[] = new String[10];
                         int n = 0;
