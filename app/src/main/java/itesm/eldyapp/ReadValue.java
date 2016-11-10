@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class ReadValue extends AppCompatActivity {
 
     TextView varTV;
@@ -52,6 +55,10 @@ public class ReadValue extends AppCompatActivity {
 
                     }
                     sJson += variablesJson(sValor, iVar);
+                    String url = "10.2.145.43:7777/compile?program=algo" + queryEncode(sJson);
+
+
+
 
                 }
             }
@@ -83,23 +90,26 @@ public class ReadValue extends AppCompatActivity {
     public String variablesJson(String sV[], int iN){
         String sJson = "\"variables\" : [\n";
         for(int i = 0; i < iN; i++){
-            if(i + 1 == iN){
-                sJson += "\"" + sV[iN] + "\",\n";
-            }
-            else {
-                String v = sV[iN];
-                String s ="\"" + sV[iN] + "\"\n";
-                sJson += s;
 
-            }
-
-
-            //sJson += (i + 1 == iN)? "\"" + sV[iN] + "\" \n" : "\"" + sV[iN] + "\", \n";
+            sJson += (i + 1 == iN)? "\"" + sV[i] + "\" \n" : "\"" + sV[i] + "\", \n";
 
         }
         sJson += "]\n}";
         return sJson;
     }
+
+    public String queryEncode(String sJ){
+        String sQuery = null;
+        try {
+            sQuery = URLEncoder.encode(sJ, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        return sQuery;
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
