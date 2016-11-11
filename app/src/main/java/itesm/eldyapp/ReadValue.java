@@ -127,7 +127,7 @@ public class ReadValue extends AppCompatActivity  {
             // Defined URL  where to send data
             URL url = new URL("10.2.145.43:7777/compile?program=algo");
 
-            // Send POST data request
+            //Send POST data request
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
