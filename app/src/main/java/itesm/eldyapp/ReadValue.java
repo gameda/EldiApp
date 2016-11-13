@@ -61,11 +61,11 @@ public class ReadValue extends AppCompatActivity  {
                     }
                     sJson += variablesJson(sValor, iVar);
                     //String url = "10.2.145.43:7777/compile?program=algo" + queryEncode(sJson);
-                    connection(queryEncode(sJson));
 
-
-
-
+                    intent = new Intent(ReadValue.this, Result.class);
+                    intent.putExtra("json", sJson);
+                    intent.putExtra("from", "Read");
+                    startActivity(intent);
 
                 }
             }
@@ -116,61 +116,7 @@ public class ReadValue extends AppCompatActivity  {
         return sQuery;
     }
 
-    public void connection(String sData){
-
-        String sText = "";
-        BufferedReader bfReader=null;
-        // Send data
-        try
-        {
-
-            // Defined URL  where to send data
-            URL url = new URL("10.2.145.43:7777/compile?program=algo");
-
-            //Send POST data request
-
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("POST");
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
-
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-            wr.write( sData );
-            wr.flush();
-            wr.close ();
-
-            // Get the server response
-
-            bfReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            StringBuilder sb = new StringBuilder();
-            String line;
-
-            // Read Server Response
-            while((line = bfReader.readLine()) != null) {
-                // Append server response in string
-                sb.append(line + "\n");
-            }
-
-
-            sText = sb.toString();
-        } catch(Exception ex) {
-
-        }
-        finally {
-            try {
-
-                bfReader.close();
-            }
-
-            catch(Exception e) {}
-        }
-
-        // Show response on activity
-        //content.setText( sText  );
-        //http://www.xyzws.com/javafaq/how-to-use-httpurlconnection-post-data-to-web-server/139
-
-
-    }
+    
 
 
 

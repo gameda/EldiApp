@@ -94,7 +94,12 @@ public class Program extends AppCompatActivity {
                     }
                     else {
                         intentRun = new Intent(Program.this, Result.class);
-                        intentRun.putExtra("code", sCode);
+                        String sJson = "{ \n" +
+                                "\"code\":\"" + sCode + "\"" +
+                                "\n}";
+
+                        intentRun.putExtra("json", sJson);
+                        intentRun.putExtra("from", "Program");
                         startActivity(intentRun);
 
                     }
@@ -104,10 +109,7 @@ public class Program extends AppCompatActivity {
                     saveFile(view);
 
                 }
-                /*if (estandarBttn.isPressed()){
-                    intent = new Intent(MainActivity.this, Estandar.class);
-                    startActivity(intent);
-                }*/
+
 
             }
         };

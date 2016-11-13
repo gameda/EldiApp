@@ -60,7 +60,8 @@ public class Archivos extends AppCompatActivity {
                 Intent intent = new Intent(Archivos.this, Program.class);
                 intent.putExtra("nombre", ListaNombres.get(position));
                 intent.putExtra("content", sContent);
-                startActivity(intent.putExtra("from", "Archivos"));
+                intent.putExtra("from", "Archivos");
+                startActivity(intent);
 
             }
         };
